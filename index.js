@@ -11,7 +11,7 @@ document.getElementById('input-field').addEventListener('keydown', function (eve
 
 search.addEventListener('click', function () {
     let input = document.getElementById('input-field')
-    fetch(`http://www.omdbapi.com/?apikey=775d2e37&s=${input.value}`)
+    fetch(`https://www.omdbapi.com/?apikey=775d2e37&s=${input.value}`)
         .then(res => res.json())
         .then(data => renderAllFilms(data.Search))
     input.value = ''
@@ -26,7 +26,7 @@ function renderAllFilms(data) {
 
 
 function renderFilms(items) {
-    fetch(`http://www.omdbapi.com/?apikey=775d2e37&t=${items.Title}`)
+    fetch(`https://www.omdbapi.com/?apikey=775d2e37&t=${items.Title}`)
         .then(res => res.json())
         .then(data => {
             document.querySelector('main').innerHTML += renderFilmsHTML(data)
